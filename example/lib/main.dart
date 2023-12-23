@@ -44,12 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             onPressed: () async {
-              String codeRes = await Navigator.push(
+              String scannedCode = await Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const ScannerScreen()));
+              print(scannedCode);
               setState(() {
-                code = codeRes;
+                code = scannedCode;
               });
             },
             icon: const Icon(
